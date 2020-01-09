@@ -3,6 +3,7 @@ const {bemhtml} = require('bem-xjst');
 const path = require('path');
 const fs = require('fs');
 
+
 const app = express();
 
 const templates = bemhtml.compile();
