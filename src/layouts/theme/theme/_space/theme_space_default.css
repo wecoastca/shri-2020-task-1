@@ -1,0 +1,13 @@
+.theme_space_default{
+    --size-text-xxxs: 3px;
+    --size-text-xxs: 6px;
+    --size-text-xs: 9px;
+    --size-text-s: 15px;
+    --size-text-m: 18px;
+    --size-text-l: 24px;
+    --size-text-xl: 27px;
+    --size-text-xxl: 36px;
+    --size-text-xxxl: 45px;
+    --size-text-xxxxl: 51px;
+    --size-text-xxxxxl: 72px;
+}
