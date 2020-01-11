@@ -1,0 +1,10 @@
+@media (min-width:1024px){
+    .theme_gap_small{
+        --gap-desktop: 27px;
+        --gap-mobile: 15px;
+    }
+}
+
+.theme{
+    box-sizing: border-box;
+}
