@@ -1,3 +1,5 @@
-.grid{
+@import "./_m-columns";
+
+.grid {
     display: grid;
 }

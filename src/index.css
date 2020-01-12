@@ -1,4 +1,6 @@
-body{
+@import "./layouts";
+
+body {
     background-attachment: fixed;
     background-color: aquamarine;
 }
