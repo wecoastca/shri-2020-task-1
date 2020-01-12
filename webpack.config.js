@@ -1,48 +1,48 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname,'stub/index.js'),
+  entry: {
+    styles: path.resolve(__dirname, 'src/index.css'),
+    scripts: path.resolve(__dirname, 'src/index.js'),
+  },
   output: {
-    filename: 'script.js',
-    path: path.resolve(__dirname, 'stub/build'),
+    path: path.resolve(__dirname, 'build'),
   },
   resolve: {
     extensions: ['.js', '.css'],
     modules: ['node_modules']
   },
   module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          include: path.resolve(__dirname,'stub'),
-          use: [
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
           {
             loader: 'babel-loader'
           }
-          ]
-        }
-        ,
-        {
-            test: /\.css$/i,
-            include: path.resolve(__dirname,'src'),
-            exclude: /node_modules/,
-            use: [
-              MiniCssExtractPlugin.loader,
-              'css-loader',
-              'style-loader'
-            ],
-        },
+        ]
+      }
+      ,
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ],
+      },
     ]
   },
   plugins: [
-     new MiniCssExtractPlugin(
-     {
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    }
+    new FixStyleOnlyEntriesPlugin(),
+    new MiniCssExtractPlugin(
+      {
+        filename: "[name].css"
+      }
     )
   ],
   node: {
