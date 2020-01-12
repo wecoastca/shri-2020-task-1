@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf build && webpack",
-    "watch": "rm -rf build && webpack -w"
+    "prebuild": "rm -rf stub/build",
+    "build": "webpack",
+    "prewatch": "rm -rf stub/build ",
+    "watch": "webpack -w",
+    "start": "node stub/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",

@@ -5,11 +5,11 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 module.exports = {
   mode: 'development',
   entry: {
-    styles: path.resolve(__dirname, 'src/index.css'),
-    scripts: path.resolve(__dirname, 'src/index.js'),
+    style: path.resolve(__dirname, 'src/index.css'),
+    script: path.resolve(__dirname, 'src/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'stub', 'build'),
   },
   resolve: {
     extensions: ['.js', '.css'],
